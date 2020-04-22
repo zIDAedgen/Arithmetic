@@ -18,6 +18,6 @@ public class Eleven {
                 j = j - 1;
             }
         }
-        return i;
+        return numbers[i];
     }
 }

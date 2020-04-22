@@ -1,3 +1,3 @@
 # Arithmetic
 This is for the python program
-Including classical algorithm and dynamic programming.
+Including paradigim of method in terms of algorithm and dynamic programming.

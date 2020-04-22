@@ -206,16 +206,19 @@ public class LinkedListDemo {
 
         }
         System.out.println(result[result.length - 1]);
+        /**
+            System.out.println(link.get(0));
+            System.out.println(link.get(1));
+            System.out.println(link.get(6));
+            System.out.println(link.set(0, "h"));
+            System.out.println(link.get(0));
+            System.out.println(link.contains("d"));
+            link.remove("l");
+            link.remove("h");
+            System.out.println(link.get(0));
+         */
+        
 
-        System.out.println(link.get(0));
-        System.out.println(link.get(1));
-        System.out.println(link.get(6));
-        System.out.println(link.set(0, "h"));
-        System.out.println(link.get(0));
-        System.out.println(link.contains("d"));
-        link.remove("l");
-        link.remove("h");
-        System.out.println(link.get(0));
 
 
 
