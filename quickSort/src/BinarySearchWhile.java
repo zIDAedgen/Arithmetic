@@ -31,21 +31,21 @@ public class BinarySearchWhile {
 class BinaryPsudo {
     public static void main(String[] args) {
         int[] test = {1, 3, 4, 5, 6, 8};
-        System.out.println(binaryPsudo(test, 1));
+        System.out.println(binaryPsudo(test, 4));
     }
     public static int binaryPsudo(int[] arr,int target) {
         int i = 0, j = arr.length - 1;
 
-        while (i + 1 < j) {
+        while (i <= j) {
             int mid = (j - i) / 2 + i;
-
             if (arr[mid] == target) {
                 return mid;
-            } else if (arr[mid] < target) {
-                i = mid + 1;
-            } else {
+            } else if (arr[mid] > target) {
                 j = mid - 1;
+            } else {
+                i = mid + 1;
             }
+
         }
 
         if (arr[i] == target) {
@@ -55,7 +55,6 @@ class BinaryPsudo {
         if (arr[j] == target) {
             return j;
         }
-
         return -1;
 
     }

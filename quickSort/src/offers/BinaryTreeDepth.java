@@ -1,6 +1,8 @@
 package offers;
 
 
+import practice.PeakElement;
+
 import javax.swing.tree.TreeNode;
 
 /**
@@ -27,31 +29,47 @@ public class BinaryTreeDepth {
 class bianrySearch {
     public static void main(String[] args) {
         int[] nums = {0, 2, 3, 4, 5, 6, 8};
-        int ult = binarySearch(nums, 0, nums.length - 1, 3);
-        System.out.println(ult);
+        //int ult = binarySearch(nums, 0, nums.length - 1, 3);
+        int res = binary(nums, 3);
+        System.out.println("result  : " + res);
+    }
+
+    public static int binary(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        int rest = binarySearch(arr, left, right, target);
+        return rest;
     }
     public static int binarySearch(int[] arr,int left,int right, int target) {
-        while (left < right) {
-            int mid = (right - left)/2 + left;
 
-            if (arr[mid] == target) {
-                return mid;
-            } else if (arr[mid] < target) {
+
+
+        //while loop version
+        while (left < right) {
+            //int mid = (right - left) / 2 + left;
+            int mid = (right + left) / 2;
+            System.out.println(mid);
+            if (arr[mid] < target) {
                 left = mid + 1;
-            } else {
+            }
+
+            if (arr[mid] > target) {
                 right = mid - 1;
             }
+
+            if (mid == target) {
+                break;
+            }
         }
-        //1. if arr[mid] ==
-        //2. if arr[mid] <
-        //3. if arr[mid] >
-        if (arr[left] == target) {
+        if (target == arr[left]) {
             return left;
         }
-        if (arr[right] == target) {
+
+        if (target == arr[right]) {
             return right;
         }
         return -1;
+
     }
 
     private static int recur(int[] arr, int left, int right, int target) {

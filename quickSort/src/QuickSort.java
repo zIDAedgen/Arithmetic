@@ -6,10 +6,60 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] arr = new int[] {3, 5, 8, 1, 2, 9, 4, 7, 6};
-        quickSort(arr,0,arr.length - 1);
+        quick(arr,0,arr.length - 1);
+
         System.out.println(Arrays.toString(arr));
+    }
+
+    public static void quick(int[] arr, int left, int right) {
+        //1 __ i, j exchange for the partition
+        //2 __ pivot exchange to the middle place
+        //3 __ recursion to do the same thing
+        if (left >= right) {
+            return;
+        }
+        int temp, i, j, pivot;
+
+        pivot = arr[left];
+        i = left;
+        j = right;
+
+        while (i < j) {
+            while (arr[j] >= pivot && i < j) {
+                j--;
+            }
+
+            while (arr[i] <= pivot && i < j) {
+                i++;
+            }
+
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+        arr[left] = arr[j];
+        arr[j] = pivot;
+
+        quick(arr, left, j - 1);
+        quick(arr, j + 1, right);
+
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
     public static void quickSort(int[] arr,int low,int high) {
         int p,i,j,temp;
 
@@ -38,9 +88,14 @@ public class QuickSort {
             arr[i] = temp;
         }
 
-
-        arr[low] = arr[j];//这里的arr[i]一定是停小于p的，经过i、j交换后i处的值一定是小于p的(j先走)
+        //exchange the pivot and arr[low/high]
+        arr[low] = arr[j];
+        System.out.println("arr : " + arr[low]);//这里的arr[i]一定是停小于p的，经过i、j交换后i处的值一定是小于p的(j先走)
         arr[j] = p;
+        System.out.println("p : " + p);
+
+
+
         quickSort(arr,low,j-1);  //对左边快排
         quickSort(arr,j+1,high); //对右边快排
 

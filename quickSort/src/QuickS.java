@@ -3,9 +3,28 @@ import java.util.Arrays;
 public class QuickS {
     public static void main(String[] args) {
         int[] array = {2, 1, 6, 8, 3, 0, 4};
-        QuickS.quickSort(array, 0, 6);
-        System.out.println(Arrays.toString(array));
+        //QuickS.quickSort(array, 0, 6);
+        quick(array, 0, 6);
+        //System.out.println(Arrays.toString(array));
+        System.out.print(Arrays.toString(array));
     }
+
+    public static void quick(int[] array, int left, int right) {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static void quickSort(int[] arr, int low, int high) {
